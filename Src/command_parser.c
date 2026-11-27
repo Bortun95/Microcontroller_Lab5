@@ -51,10 +51,10 @@ void command_parser_fsm(void) {
             if (ch == '#') {
                 cmd_string[cmd_index] = '\0';
 
-                if (strcmp(cmd_string, "RST") == 0) {
+                if ((strcmp(cmd_string, "RST") == 0) || strcmp(cmd_string, "rst") == 0) {
                     command_flag = 1;
                     command_data = CMD_RST;
-                } else if (strcmp(cmd_string, "OK") == 0) {
+                } else if ((strcmp(cmd_string, "OK") == 0) || (strcmp(cmd_string, "ok") == 0)) {
                     command_flag = 1;
                     command_data = CMD_OK;
                 }
